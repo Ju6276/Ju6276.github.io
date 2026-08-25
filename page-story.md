@@ -1,4 +1,4 @@
-# Academic Page Story of Ju Dong
+# Academic Page Story of Ju Dong (董驹)
 
 ## About Me
 

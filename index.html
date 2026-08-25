@@ -154,11 +154,27 @@ img { display: block; max-width: 100%; height: auto; }
 .masthead-text { flex: 1 1 auto; min-width: 0; }
 
 h1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5em;
   margin: 0 0 var(--space-2);
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.1;
+}
+/* Capitalized via CSS, not typed in caps, so the copied text and the accessible
+   name stay "Ju Dong" — matching how the papers are signed. */
+.surname { text-transform: uppercase; letter-spacing: 0.005em; }
+/* The Chinese name is a secondary reading of the same name, not a second name:
+   sized down and set in --color-secondary so it never competes with the Latin one. */
+.name-cjk {
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Source Han Sans SC', 'Microsoft YaHei', sans-serif;
+  font-size: 0.6em;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-secondary);
 }
 .role { margin: 0; color: var(--color-secondary); font-size: 1.0625rem; }
 .affil { margin: var(--space-1) 0 0; color: var(--color-muted-foreground); font-size: 0.9375rem; }
@@ -374,7 +390,7 @@ footer {
 
   <header class="masthead">
     <div class="masthead-text">
-      <h1>Ju Dong</h1>
+      <h1><span>Ju <span class="surname">Dong</span></span><span class="name-cjk" lang="zh-Hans">董驹</span></h1>
       <p class="role">PhD Candidate, Robot Learning &amp; Manipulation</p>
       <p class="affil">TAMS, Department of Informatics, University of Hamburg</p>
     </div>
