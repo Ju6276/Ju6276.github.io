@@ -217,7 +217,7 @@ section { padding-top: var(--space-18); scroll-margin-top: var(--space-6); }
 .prose p { margin: 0 0 var(--space-4); max-width: 72ch; }
 .prose p:last-child { margin-bottom: 0; }
 
-/* ---------- Timeline (news, education, experience, patents, talks) ---------- */
+/* ---------- Timeline (news, education, experience, service) ---------- */
 .timeline { display: flex; flex-direction: column; }
 .tl-item {
   display: grid;
@@ -365,10 +365,9 @@ footer {
   <a href="#about" aria-label="About"></a>
   <a href="#news" aria-label="News"></a>
   <a href="#publications" aria-label="Selected publications"></a>
-  <a href="#patents" aria-label="Patents"></a>
   <a href="#education" aria-label="Education"></a>
   <a href="#experience" aria-label="Experience"></a>
-  <a href="#talks" aria-label="Talks"></a>
+  <a href="#service" aria-label="Service"></a>
 </nav>
 
 <div class="wrap">
@@ -408,7 +407,7 @@ footer {
         <span class="rule" aria-hidden="true"></span>
       </div>
       <div class="prose">
-        <p>I am a PhD candidate at TAMS (Technical Aspects of Multimodal Systems), Department of Informatics, University of Hamburg, supervised by Prof. <a href="https://tams.informatik.uni-hamburg.de/people/zhang/">Jianwei Zhang</a>. I work closely with the Chair of Robotics, Artificial Intelligence and Real-Time Systems at the Technical University of Munich and with the AI department at Agile Robots SE in Munich.</p>
+        <p>I am a PhD candidate at TAMS (Technical Aspects of Multimodal Systems), Department of Informatics, University of Hamburg, supervised by Prof. <a href="https://tams.informatik.uni-hamburg.de/people/zhang/">Jianwei Zhang</a>. I also work with the AI department at Agile Robots SE in Munich.</p>
         <p>My research focuses on generative policies for robotic manipulation — how robots learn multi-modal behaviors from human demonstrations and execute them reliably on real hardware. Recent work spans multi-view diffusion policies for mobile manipulation, one-step distillation of flow-matching policies for real-time closed-loop control, vision-language-action models for bimanual manipulation, and benchmarks for safe, responsible robot behavior.</p>
         <p>I care about the gap between what a policy achieves in simulation and what survives contact with a real robot. Learned policies generalize but are often too slow or too brittle for closed-loop control; classical controllers are stable but rigid. My work sits at that boundary, combining generative models with control-theoretic structure so the resulting systems are both adaptive and dependable.</p>
       </div>
@@ -422,8 +421,8 @@ footer {
       </div>
       <div class="timeline">
         <div class="tl-item">
-          <div class="tl-date">May 2026</div>
-          <div class="tl-body"><p>Presented “Mobile Bimanual Manipulation” at the TAMS Oberseminar, University of Hamburg.</p></div>
+          <div class="tl-date">Aug 2026</div>
+          <div class="tl-body"><p>Helping run the <a href="https://ebim-benchmark.github.io/">EBiM Benchmark</a>, a globally coordinated benchmark for real-world embodied bimanual manipulation, with cross-continent real-robot validation in Hamburg, Munich, and Shanghai.</p></div>
         </div>
         <div class="tl-item">
           <div class="tl-date">Mar 2026</div>
@@ -496,7 +495,6 @@ footer {
         <p class="authors">Lei Zhang, <span class="me">Ju Dong</span>, Kaixin Bai, Minheng Ni, Zoltán-Csaba Márton, Zhaopeng Chen, and Jianwei Zhang</p>
         <div class="venue-row">
           <span class="tag tag-review">Under review</span>
-          <span class="venue">IEEE Transactions on Robotics (T-RO), 2026</span>
         </div>
         <p class="summary">A benchmark for whether LMM-powered agents can identify physical hazards, plan corrective behavior, and complete manipulation tasks safely — spanning hazard types, planning difficulty, and adversarial instruction intent, evaluated across high-level skills, low-level pose actions, and executable code generation.</p>
         <div class="pub-links">
@@ -505,26 +503,9 @@ footer {
       </article>
     </section>
 
-    <section id="patents">
-      <div class="section-head">
-        <span class="ord" aria-hidden="true">04</span>
-        <h2>Patents</h2>
-        <span class="rule" aria-hidden="true"></span>
-      </div>
-      <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-date">Mar 2020</div>
-          <div class="tl-body">
-            <p class="tl-title">Pipeline Inspection Robot</p>
-            <p class="sub">J. Gu, F. He, Z. Tian, K. Wang, Y. Xin, and <strong>J. Dong</strong>. Chinese Patent CN210219051U, granted Mar. 2020.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="education">
       <div class="section-head">
-        <span class="ord" aria-hidden="true">05</span>
+        <span class="ord" aria-hidden="true">04</span>
         <h2>Education</h2>
         <span class="rule" aria-hidden="true"></span>
       </div>
@@ -548,7 +529,7 @@ footer {
 
     <section id="experience">
       <div class="section-head">
-        <span class="ord" aria-hidden="true">06</span>
+        <span class="ord" aria-hidden="true">05</span>
         <h2>Experience</h2>
         <span class="rule" aria-hidden="true"></span>
       </div>
@@ -563,18 +544,18 @@ footer {
       </div>
     </section>
 
-    <section id="talks">
+    <section id="service">
       <div class="section-head">
-        <span class="ord" aria-hidden="true">07</span>
-        <h2>Talks</h2>
+        <span class="ord" aria-hidden="true">06</span>
+        <h2>Service</h2>
         <span class="rule" aria-hidden="true"></span>
       </div>
       <div class="timeline">
         <div class="tl-item">
-          <div class="tl-date">May 2026</div>
+          <div class="tl-date">2026</div>
           <div class="tl-body">
-            <p class="tl-title">Mobile Bimanual Manipulation</p>
-            <p class="sub">TAMS Oberseminar, University of Hamburg, Germany.</p>
+            <p class="tl-title"><a href="https://ebim-benchmark.github.io/">EBiM Benchmark</a> — Toward a Globally Coordinated Benchmark for Real-World Embodied Bimanual Manipulation</p>
+            <p class="sub">Competition support team, running cross-site real-robot validation on Mobile FR3 Duo platforms in Hamburg, Munich, and Shanghai.</p>
           </div>
         </div>
       </div>

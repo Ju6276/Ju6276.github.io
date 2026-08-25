@@ -10,7 +10,7 @@ A single static `index.html` with no build step, no framework, and no dependenci
 |---|---|
 | `index.html` | The entire site — markup, styles, and scripts inline |
 | `assets/` | Avatar and publication teaser figures (WebP) |
-| `page-story.md` | Content source of truth: About, Links, News, Publications, Patents, Education, Experience, Talks |
+| `page-story.md` | Content source of truth: About, Links, News, Publications, Education, Experience, Service |
 | `docs/plans/` | Design doc, implementation plan, and audit report |
 
 ## Editing content
