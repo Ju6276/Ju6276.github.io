@@ -331,22 +331,54 @@ section { padding-top: var(--space-18); scroll-margin-top: var(--space-6); }
   background: var(--color-accent);
 }
 
-/* ---------- Contact ---------- */
-.contact-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-8); }
-.contact-copy { flex: 1 1 20rem; min-width: 0; }
-.contact-copy p { margin: 0; max-width: 56ch; color: var(--color-secondary); }
+/* ---------- WeChat dialog ---------- */
+/* Scoped to [open] so the UA's display:none still hides the closed dialog. */
+#wechat-dialog[open] { display: flex; flex-direction: column; align-items: center; }
+#wechat-dialog {
+  margin: auto;
+  padding: var(--space-6);
+  max-width: calc(100vw - var(--space-8));
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  background: var(--color-surface);
+  color: var(--color-foreground);
+  text-align: center;
+}
+#wechat-dialog::backdrop { background: rgb(0 0 0 / 0.55); }
+#wechat-dialog-title {
+  margin: 0 0 var(--space-4);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
 /* The code keeps its white field in both themes — inverted QR codes are read
    inconsistently across phone cameras, and a contact code that sometimes fails
    is worse than one that looks slightly foreign in dark mode. */
 .qr-card {
-  flex: 0 0 auto;
+  display: inline-block;
   padding: var(--space-2);
   background: #fff;
   border: 1px solid var(--color-border);
   border-radius: 2px;
   line-height: 0;
 }
-.qr-card img { display: block; width: clamp(140px, 18vw, 168px); height: auto; }
+.qr-card img { display: block; width: min(232px, 60vw); height: auto; }
+.dialog-close {
+  margin-top: var(--space-4);
+  min-height: 44px;
+  padding: var(--space-2) var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-secondary);
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+.dialog-close:hover { color: var(--color-accent); border-color: var(--color-accent); background: var(--color-accent-soft); }
 
 /* ---------- Footer ---------- */
 footer {
@@ -374,7 +406,6 @@ footer {
   .tl-item { grid-template-columns: 1fr; gap: var(--space-1); }
   .tl-date { padding-top: 0; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; }
   .pub { padding: var(--space-6) 0; }
-  .contact-row { gap: var(--space-6); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -402,7 +433,6 @@ footer {
   <a href="#education" aria-label="Education"></a>
   <a href="#experience" aria-label="Experience"></a>
   <a href="#service" aria-label="Service"></a>
-  <a href="#contact" aria-label="Contact"></a>
 </nav>
 
 <div class="wrap">
@@ -430,6 +460,10 @@ footer {
     <a href="https://github.com/Ju6276" aria-label="GitHub profile">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
       GitHub
+    </a>
+    <a href="assets/wechat-qr.webp" id="wechat-link" aria-label="Show WeChat QR code">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.9 2.2C4.4 2.2.8 5.3.8 9.1c0 2.1 1.1 4 2.9 5.3l-.8 2.5 2.9-1.5c.6.2 1.2.3 1.9.3-.1-.4-.2-.9-.2-1.3 0-3.6 3.4-6.5 7.7-6.5.3 0 .6 0 .8.1-.6-3.3-3.8-5.8-7.1-5.8Zm-2.7 4.1a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm5.4 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/><path d="M23.2 14.4c0-3.1-3.1-5.6-6.9-5.6s-6.9 2.5-6.9 5.6 3.1 5.6 6.9 5.6c.8 0 1.6-.1 2.3-.3l2.5 1.3-.7-2.1c1.7-1.1 2.8-2.7 2.8-4.5Zm-9.2-.8a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8Zm4.6 0a.9.9 0 1 1 0-1.8.9.9 0 0 1 0 1.8Z"/></svg>
+      WeChat
     </a>
   </div>
 
@@ -596,28 +630,20 @@ footer {
       </div>
     </section>
 
-    <section id="contact">
-      <div class="section-head">
-        <span class="ord" aria-hidden="true">07</span>
-        <h2>Contact</h2>
-        <span class="rule" aria-hidden="true"></span>
-      </div>
-      <div class="contact-row">
-        <div class="contact-copy">
-          <p>Email is the fastest way to reach me: <a href="mailto:ju.dong@uni-hamburg.de">ju.dong@uni-hamburg.de</a>. If you use WeChat, scan the code to add me there.</p>
-        </div>
-        <div class="qr-card">
-          <img src="assets/wechat-qr.webp" width="600" height="600" loading="lazy" alt="WeChat QR code to add Ju Dong as a contact">
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <footer id="footer">
     <span>© <span id="year">2026</span> Ju Dong</span>
     <span>Hosted on GitHub Pages</span>
   </footer>
+
+  <dialog id="wechat-dialog" aria-labelledby="wechat-dialog-title">
+    <p id="wechat-dialog-title">Scan with WeChat to add me</p>
+    <div class="qr-card">
+      <img src="assets/wechat-qr.webp" width="600" height="600" loading="lazy" alt="WeChat QR code to add Ju Dong as a contact">
+    </div>
+    <button type="button" class="dialog-close" autofocus>Close</button>
+  </dialog>
 
 </div>
 
@@ -668,6 +694,31 @@ footer {
     footerSpy.observe(document.getElementById('footer'));
   } else {
     setActive('about');
+  }
+
+  /* The WeChat entry is a plain link to the image, so it still works without
+     JavaScript; here we upgrade it to a dialog. */
+  var wechatLink = document.getElementById('wechat-link');
+  var wechatDialog = document.getElementById('wechat-dialog');
+
+  if (wechatDialog && typeof wechatDialog.showModal === 'function') {
+    wechatLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      wechatDialog.showModal();
+    });
+
+    wechatDialog.querySelector('.dialog-close').addEventListener('click', function () {
+      wechatDialog.close();
+    });
+
+    /* Clicks on the backdrop report the dialog as their target, so compare
+       against its box rather than closing on any padding click. */
+    wechatDialog.addEventListener('click', function (e) {
+      var r = wechatDialog.getBoundingClientRect();
+      var inside = e.clientX >= r.left && e.clientX <= r.right &&
+                   e.clientY >= r.top && e.clientY <= r.bottom;
+      if (!inside) { wechatDialog.close(); }
+    });
   }
 })();
 </script>

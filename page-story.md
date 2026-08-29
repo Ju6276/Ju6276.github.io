@@ -16,6 +16,7 @@ I care about the gap between what a policy achieves in simulation and what survi
 [Email](mailto:ju.dong@uni-hamburg.de)
 [Google Scholar](https://scholar.google.com/citations?user=fmoG1a4AAAAJ)
 [GitHub](https://github.com/Ju6276)
+WeChat — `assets/wechat-qr.webp`, opened in a dialog rather than shown on the page
 
 
 ## News
@@ -63,10 +64,3 @@ I care about the gap between what a policy achieves in simulation and what survi
 ## Service
 
 + 2026: [EBiM Benchmark](https://ebim-benchmark.github.io/) — Toward a Globally Coordinated Benchmark for Real-World Embodied Bimanual Manipulation. Competition support team, running cross-site real-robot validation on Mobile FR3 Duo platforms in Hamburg, Munich, and Shanghai.
-
-
-## Contact
-
-Email is the fastest way to reach me: ju.dong@uni-hamburg.de. If you use WeChat, scan the code to add me there.
-
-![WeChat QR code](assets/wechat-qr.webp)

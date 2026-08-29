@@ -10,7 +10,7 @@ A single static `index.html` with no build step, no framework, and no dependenci
 |---|---|
 | `index.html` | The entire site — markup, styles, and scripts inline |
 | `assets/` | Avatar, publication teaser figures, and the WeChat QR (WebP) |
-| `page-story.md` | Content source of truth: About, Links, News, Publications, Education, Experience, Service, Contact |
+| `page-story.md` | Content source of truth: About, Links, News, Publications, Education, Experience, Service |
 | `docs/plans/` | Design doc, implementation plan, and audit report |
 
 ## Editing content
@@ -50,9 +50,11 @@ im.resize((1400, round(im.height*1400/im.width))).save('assets/name.webp', 'WEBP
 
 Declare the resulting `width` and `height` on the `<img>` so the page reserves space and avoids layout shift.
 
-## Contact QR code
+## WeChat QR code
 
-`assets/wechat-qr.webp` is the WeChat code, cropped out of the app's share screenshot so the nickname and avatar are not published alongside it. To replace it, crop the code itself with a white margin around it and keep the square aspect ratio:
+`assets/wechat-qr.webp` is cropped out of the app's share screenshot so the nickname and avatar are not published alongside it. It is not rendered on the page — the WeChat link in the header opens it in a `<dialog>`, and without JavaScript the same link falls back to opening the image directly.
+
+To replace it, crop the code itself with a white margin around it and keep the square aspect ratio:
 
 ```bash
 python3 -c "
