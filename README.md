@@ -9,9 +9,8 @@ A single static `index.html` with no build step, no framework, and no dependenci
 | Path | Purpose |
 |---|---|
 | `index.html` | The entire site — markup, styles, and scripts inline |
-| `assets/` | Avatar and publication teaser figures (WebP), contact card and its QR code |
+| `assets/` | Avatar, publication teaser figures, and the WeChat QR (WebP) |
 | `page-story.md` | Content source of truth: About, Links, News, Publications, Education, Experience, Service, Contact |
-| `tools/` | `make-qr.py`, regenerates the contact QR from the vCard |
 | `docs/plans/` | Design doc, implementation plan, and audit report |
 
 ## Editing content
@@ -53,14 +52,17 @@ Declare the resulting `width` and `height` on the `<img>` so the page reserves s
 
 ## Contact QR code
 
-`assets/ju-dong.vcf` is the source of truth; the QR code is generated from that file's exact bytes, so the downloadable card and the scanned card cannot drift apart. After editing the `.vcf`, regenerate:
+`assets/wechat-qr.webp` is the WeChat code, cropped out of the app's share screenshot so the nickname and avatar are not published alongside it. To replace it, crop the code itself with a white margin around it and keep the square aspect ratio:
 
 ```bash
-pip3 install segno
-python3 tools/make-qr.py
+python3 -c "
+from PIL import Image
+im = Image.open('wechat-screenshot.png').convert('RGB')
+im.crop((86, 238, 716, 869)).resize((600, 600), Image.LANCZOS).save('assets/wechat-qr.webp', 'WEBP', lossless=True, method=6)
+"
 ```
 
-Keep the payload short — every field pushes the code to a higher version with more modules, which makes it harder to scan at small sizes. The current card (name, affiliation, title, email, homepage) lands at version 10, 57 modules.
+WeChat invalidates the old code if you regenerate it in the app, so re-export this file whenever that happens.
 
 ## Design
 

@@ -67,6 +67,6 @@ I care about the gap between what a policy achieves in simulation and what survi
 
 ## Contact
 
-Scan the code to save my details straight to your phone, or download the card as a vCard (`assets/ju-dong.vcf`). Email is the fastest way to reach me: ju.dong@uni-hamburg.de.
+Email is the fastest way to reach me: ju.dong@uni-hamburg.de. If you use WeChat, scan the code to add me there.
 
-![Contact QR code](assets/contact-qr.svg)
+![WeChat QR code](assets/wechat-qr.webp)

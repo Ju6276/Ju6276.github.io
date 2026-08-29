@@ -340,16 +340,13 @@ section { padding-top: var(--space-18); scroll-margin-top: var(--space-6); }
    is worse than one that looks slightly foreign in dark mode. */
 .qr-card {
   flex: 0 0 auto;
-  display: block;
   padding: var(--space-2);
   background: #fff;
   border: 1px solid var(--color-border);
   border-radius: 2px;
   line-height: 0;
-  transition: border-color var(--dur) var(--ease);
 }
-.qr-card:hover { border-color: var(--color-accent); }
-.qr-card img { display: block; width: clamp(128px, 17vw, 152px); height: auto; }
+.qr-card img { display: block; width: clamp(140px, 18vw, 168px); height: auto; }
 
 /* ---------- Footer ---------- */
 footer {
@@ -607,11 +604,11 @@ footer {
       </div>
       <div class="contact-row">
         <div class="contact-copy">
-          <p>Scan the code to save my details straight to your phone, or download the card as a <a href="assets/ju-dong.vcf" download>vCard</a>. Email is the fastest way to reach me: <a href="mailto:ju.dong@uni-hamburg.de">ju.dong@uni-hamburg.de</a>.</p>
+          <p>Email is the fastest way to reach me: <a href="mailto:ju.dong@uni-hamburg.de">ju.dong@uni-hamburg.de</a>. If you use WeChat, scan the code to add me there.</p>
         </div>
-        <a class="qr-card" href="assets/ju-dong.vcf" download aria-label="Download contact card for Ju Dong (vCard)">
-          <img src="assets/contact-qr.svg" width="61" height="61" alt="QR code containing Ju Dong's name, affiliation, email address, and homepage">
-        </a>
+        <div class="qr-card">
+          <img src="assets/wechat-qr.webp" width="600" height="600" loading="lazy" alt="WeChat QR code to add Ju Dong as a contact">
+        </div>
       </div>
     </section>
 
