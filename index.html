@@ -331,6 +331,26 @@ section { padding-top: var(--space-18); scroll-margin-top: var(--space-6); }
   background: var(--color-accent);
 }
 
+/* ---------- Contact ---------- */
+.contact-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-8); }
+.contact-copy { flex: 1 1 20rem; min-width: 0; }
+.contact-copy p { margin: 0; max-width: 56ch; color: var(--color-secondary); }
+/* The code keeps its white field in both themes — inverted QR codes are read
+   inconsistently across phone cameras, and a contact code that sometimes fails
+   is worse than one that looks slightly foreign in dark mode. */
+.qr-card {
+  flex: 0 0 auto;
+  display: block;
+  padding: var(--space-2);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  line-height: 0;
+  transition: border-color var(--dur) var(--ease);
+}
+.qr-card:hover { border-color: var(--color-accent); }
+.qr-card img { display: block; width: clamp(128px, 17vw, 152px); height: auto; }
+
 /* ---------- Footer ---------- */
 footer {
   margin-top: var(--space-12);
@@ -357,6 +377,7 @@ footer {
   .tl-item { grid-template-columns: 1fr; gap: var(--space-1); }
   .tl-date { padding-top: 0; font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; }
   .pub { padding: var(--space-6) 0; }
+  .contact-row { gap: var(--space-6); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -384,6 +405,7 @@ footer {
   <a href="#education" aria-label="Education"></a>
   <a href="#experience" aria-label="Experience"></a>
   <a href="#service" aria-label="Service"></a>
+  <a href="#contact" aria-label="Contact"></a>
 </nav>
 
 <div class="wrap">
@@ -574,6 +596,22 @@ footer {
             <p class="sub">Competition support team, running cross-site real-robot validation on Mobile FR3 Duo platforms in Hamburg, Munich, and Shanghai.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-head">
+        <span class="ord" aria-hidden="true">07</span>
+        <h2>Contact</h2>
+        <span class="rule" aria-hidden="true"></span>
+      </div>
+      <div class="contact-row">
+        <div class="contact-copy">
+          <p>Scan the code to save my details straight to your phone, or download the card as a <a href="assets/ju-dong.vcf" download>vCard</a>. Email is the fastest way to reach me: <a href="mailto:ju.dong@uni-hamburg.de">ju.dong@uni-hamburg.de</a>.</p>
+        </div>
+        <a class="qr-card" href="assets/ju-dong.vcf" download aria-label="Download contact card for Ju Dong (vCard)">
+          <img src="assets/contact-qr.svg" width="61" height="61" alt="QR code containing Ju Dong's name, affiliation, email address, and homepage">
+        </a>
       </div>
     </section>
 

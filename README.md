@@ -9,8 +9,9 @@ A single static `index.html` with no build step, no framework, and no dependenci
 | Path | Purpose |
 |---|---|
 | `index.html` | The entire site — markup, styles, and scripts inline |
-| `assets/` | Avatar and publication teaser figures (WebP) |
-| `page-story.md` | Content source of truth: About, Links, News, Publications, Education, Experience, Service |
+| `assets/` | Avatar and publication teaser figures (WebP), contact card and its QR code |
+| `page-story.md` | Content source of truth: About, Links, News, Publications, Education, Experience, Service, Contact |
+| `tools/` | `make-qr.py`, regenerates the contact QR from the vCard |
 | `docs/plans/` | Design doc, implementation plan, and audit report |
 
 ## Editing content
@@ -49,6 +50,17 @@ im.resize((1400, round(im.height*1400/im.width))).save('assets/name.webp', 'WEBP
 ```
 
 Declare the resulting `width` and `height` on the `<img>` so the page reserves space and avoids layout shift.
+
+## Contact QR code
+
+`assets/ju-dong.vcf` is the source of truth; the QR code is generated from that file's exact bytes, so the downloadable card and the scanned card cannot drift apart. After editing the `.vcf`, regenerate:
+
+```bash
+pip3 install segno
+python3 tools/make-qr.py
+```
+
+Keep the payload short — every field pushes the code to a higher version with more modules, which makes it harder to scan at small sizes. The current card (name, affiliation, title, email, homepage) lands at version 10, 57 modules.
 
 ## Design
 

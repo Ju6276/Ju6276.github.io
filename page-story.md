@@ -63,3 +63,10 @@ I care about the gap between what a policy achieves in simulation and what survi
 ## Service
 
 + 2026: [EBiM Benchmark](https://ebim-benchmark.github.io/) — Toward a Globally Coordinated Benchmark for Real-World Embodied Bimanual Manipulation. Competition support team, running cross-site real-robot validation on Mobile FR3 Duo platforms in Hamburg, Munich, and Shanghai.
+
+
+## Contact
+
+Scan the code to save my details straight to your phone, or download the card as a vCard (`assets/ju-dong.vcf`). Email is the fastest way to reach me: ju.dong@uni-hamburg.de.
+
+![Contact QR code](assets/contact-qr.svg)
