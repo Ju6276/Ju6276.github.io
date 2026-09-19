@@ -36,6 +36,10 @@ WeChat — `assets/wechat-qr.webp`, opened in a dialog rather than shown on the 
 
 ## Selected Publications
 
++ ![ForceDelta-VLA](assets/forcedelta.webp)
+  ForceDelta-VLA: Distilling Force-Conditioned Action Corrections for Contact-Rich Manipulation, **Ju Dong**, Yu Fu, Jian Chen, Yimeng Liu, Haocheng Zhao, Lei Zhang, Kaixin Bai, Liding Zhang, Diwen Zheng, Alois Christian Knoll, Angela P. Schoellig, and Jianwei Zhang, Under review. [[arXiv](https://arxiv.org/abs/2609.18242)]
+  A correction-distillation framework that separates a slow reference action from a fast force correction: paired predictions from a frozen teacher's force-conditioned and force-agnostic modes define an explicit correction target, so a lightweight student can adjust actions at 100 Hz from force history and robot state without regenerating action chunks. 82.2% mean success across nine single-arm and bimanual contact-rich tasks versus 54.4% for ForceVLA, with roughly 26% lower mean peak contact force.
+
 + ![From Flow to One Step](assets/flow2one.webp)
   From Flow to One Step: Real-Time Multi-Modal Trajectory Policies via Implicit Maximum Likelihood Estimation-based Distribution Distillation, **Ju Dong\***, Liding Zhang, Lei Zhang\*, Yu Fu, Kaixin Bai, Zoltán-Csaba Márton, Zhenshan Bing, Zhaopeng Chen, Alois Christian Knoll, and Jianwei Zhang, IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026). \*Equal contribution. [[arXiv](https://arxiv.org/abs/2603.09415)] [[Project Page](https://sites.google.com/view/flow2one)]
   Distills a Conditional Flow Matching expert into a single-step student policy via Implicit Maximum Likelihood Estimation, using a bi-directional Chamfer objective to preserve multi-modality instead of collapsing to averaged trajectories. Achieves 70.0% success at 125 Hz on real hardware — a 43x speedup over the multi-step teacher.

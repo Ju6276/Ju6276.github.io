@@ -525,6 +525,22 @@ footer {
 
       <article class="pub">
         <div class="teaser">
+          <img src="assets/forcedelta.webp" width="1400" height="739" loading="lazy" decoding="async"
+               alt="ForceDelta-VLA framework: a frozen force-aware teacher defines force and delay correction targets that are distilled into a fast student correction policy running at 100 Hz on top of slow reference actions, with a real-world comparison where ForceVLA fails and ForceDelta-VLA succeeds at lower contact force.">
+        </div>
+        <h3 class="pub-title">ForceDelta-VLA: Distilling Force-Conditioned Action Corrections for Contact-Rich Manipulation</h3>
+        <p class="authors"><span class="me">Ju Dong</span>, Yu Fu, Jian Chen, Yimeng Liu, Haocheng Zhao, Lei Zhang, Kaixin Bai, Liding Zhang, Diwen Zheng, Alois Christian Knoll, Angela P. Schoellig, and Jianwei Zhang</p>
+        <div class="venue-row">
+          <span class="tag tag-review">Under review</span>
+        </div>
+        <p class="summary">A correction-distillation framework that separates a slow reference action from a fast force correction: paired predictions from a frozen teacher's force-conditioned and force-agnostic modes define an explicit correction target, so a lightweight student can adjust actions at 100 Hz from force history and robot state without regenerating action chunks. 82.2% mean success across nine single-arm and bimanual contact-rich tasks versus 54.4% for ForceVLA, with roughly 26% lower mean peak contact force.</p>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2609.18242">arXiv</a>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="teaser">
           <img src="assets/flow2one.webp" width="1400" height="678" loading="lazy" decoding="async"
                alt="Teacher–student distillation framework and four real-world manipulation tasks: door opening, dynamic pick and place, pick and place into a microwave, and cleaning.">
         </div>
